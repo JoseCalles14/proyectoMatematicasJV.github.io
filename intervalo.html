@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Estimación por intervalo</title>
+    <link rel="stylesheet" href="intervalo.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <header class="header"><a class="link" href="index.html">Ir a estimacion puntual</a>
+        <div class="nombres">
+            <label for="" class="label">Nombres: Jose Calles, Victor Toyo
+            </label>
+            <label for="" class="label">Cedulas: 30237541, 29748673
+            </label>
+          </div>
+    </header>
+    <main class="main">
+    <form id="interval-estimation-form">
+        <label for="mean">Media:</label>
+        <input type="number" id="mean" name="mean">
+        <label for="std-dev">Desviación estándar:</label>
+        <input type="number" id="std-dev" name="std-dev">
+        <label for="sample-size">Tamaño de la muestra:</label>
+        <input type="number" id="sample-size" name="sample-size">
+        <label for="confidence-level">Nivel de confianza:</label>
+        <input type="number" id="confidence-level" name="confidence-level">
+        <button type="button" onclick="calculateInterval()">Calcular</button>
+    </form>
+    <div class= 'valuetoShow' id="result"></div>
+    </main>
+    <script>
+        function calculateInterval() {
+
+            var mean = parseFloat(document.getElementById('mean').value);
+            var stdDev = parseFloat(document.getElementById('std-dev').value);
+            var sampleSize = parseFloat(document.getElementById('sample-size').value);
+            var confidenceLevel = parseFloat(document.getElementById('confidence-level').value);
+
+            if (isNaN(mean)) {
+                mean = calculateSampleMean(sampleData);
+            }
+            if (isNaN(stdDev)) {
+                stdDev = calculateSampleStdDev(sampleData);
+            }
+
+            var z = getZValue(confidenceLevel);
+
+            var marginOfError = z * (stdDev / Math.sqrt(sampleSize));
+            var lowerLimit = mean - marginOfError;
+            var upperLimit = mean + marginOfError;
+
+            document.getElementById('result').textContent = 'El intervalo de confianza es: [' + lowerLimit + ' - ' + upperLimit + ']';
+            document.getElementById('result').classList.add('show')
+
+        }
+
+
+
+function getZValue(confidenceLevel) {
+if (confidenceLevel === 90) {
+    return 1.645;
+} else if (confidenceLevel === 95) {
+    return 1.96;
+} else if (confidenceLevel === 99) {
+    return 2.576;
+} else {
+    return 1.96;
+}
+}
+
+    </script>
+</body>
+</html>

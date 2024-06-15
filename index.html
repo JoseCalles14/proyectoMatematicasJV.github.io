@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Muestreo Puntual</title>
+    <link rel="stylesheet" href="index.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
+
+</head>
+<body>
+    <header class="header">
+        <div class="header__title">
+            Muestreo Puntual
+        </div>
+
+        <div class="radio-inputs">
+            <label class="radio" id="media">
+              <input type="radio" name="radio" checked="">
+              <span class="name">Media</span>
+            </label>
+            <label class="radio" id="desviacionEstandar">
+              <input type="radio" name="radio">
+              <span class="name">Desviacion Estandar</span>
+            </label>
+                
+            <label class="radio" id="varianza">
+              <input type="radio" name="radio">
+              <span class="name">Varianza</span>
+            </label>
+    
+            <label class="radio" id="proporcion">
+                <input type="radio" name="radio">
+                <span class="name">Proporcion</span>
+              </label>
+        </div>
+    
+    </header>
+
+
+
+    <main class="main cMedia active">
+      <div class="calculator" id="calculator">
+        <div class="item media">
+          <input class="xi__input input" type="search" id="xi" placeholder="Muestra" />
+          <input type="search" class="n__input input" type="search" id="n" placeholder="Numero de valores">
+        </div>
+
+        <label for="" id="failedM" class="failed">Por favor, llene los registros correctamente</label>
+        <div class="media__submit">
+          <input type="submit" id="buttonMedia" value="Calcular" class="input input__submit">
+        </div>
+        
+      </div>
+      <div class="valuetoShow" id="showMedia">
+
+      </div>
+      
+
+    </main>
+
+    <main class="main cDesviacionEstandar">
+      <div class="calculator" id="calculator">
+        <div class="item desviacionEstandar">
+          <input class="xi__input input" type="search" id="xiD" placeholder="Muestra" />
+          <input type="search" class="n__input input" type="search" id="nM" placeholder="Numero de valores">
+          <input type="search" class="n__input input" type="search" id="m" placeholder="Media">
+        </div>
+
+
+        <label for="" id="failedD" class="failed">Por favor, llene los registros correctamente</label>
+        <div class="media__submit">
+          <input type="submit" id="buttonDesviacion" value="Calcular" class="input input__submit">
+        </div>
+      
+      </div>
+
+
+      <div class="valuetoShow" id="showDesviacion">
+
+      </div>
+
+    </main>
+
+
+    <main class="main cVarianza">
+      <div class="calculator" id="calculator">
+        <div class="item ">
+          <input class="xi__input input" type="search" id="desviacionE" placeholder="DesviacionE" />
+        </div>
+
+
+        <label for="" id="failedV" class="failed">Por favor, llene los registros correctamente</label>
+        <div class="media__submit">
+          <input type="submit" id="buttonVarianza" value="Calcular" class="input input__submit">
+        </div>
+      
+      </div>
+
+
+      <div class="valuetoShow" id="showVarianza">
+
+      </div>
+
+    </main>
+
+    <main class="main cProporcion">
+      <div class="calculator" id="calculator">
+        <div class="item">
+          <input class="xi__input input" type="search" id="xiP" placeholder="P(xi)" />
+          <input type="search" class="n__input input" type="search" id="nP" placeholder="Numero de valores">
+        </div>
+
+
+        <label for="" id="failedP" class="failed">Por favor, llene los registros correctamente</label>
+        <div class="media__submit">
+          <input type="submit" id="buttonProporcion" value="Calcular" class="input input__submit">
+        </div>
+      
+      </div>
+
+
+      <div class="valuetoShow" id="showProporcion">
+
+      </div>
+
+    </main>
+
+<footer class="footer">
+  <a class='link' href="intervalo.html">Ir a estimacion por intervalos</a>
+  <div class="nombres">
+    <label for="" class="label">Nombres: Jose Calles, Victor Toyo
+    </label>
+    <label for="" class="label">Cedulas: 30237541, 29748673
+    </label>
+  </div>
+</footer>
+    
+   
+</body>
+<script src="index.js"></script>
+
+</html>

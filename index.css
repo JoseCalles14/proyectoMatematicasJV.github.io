@@ -1,0 +1,246 @@
+body{
+    font-family: 'Roboto', sans-serif;
+    margin: 0;
+    padding: 2%;
+    background-color: #262822;
+    color: #FDFFFF;
+}
+
+
+:root{
+    
+}
+
+.header{
+    height: 60px;
+    font-size: 22px;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 90vw;
+    margin-left: 22px;
+}
+
+.radio-inputs {
+    position: relative;
+    display: flex;
+    flex-wrap: wrap;
+    border-radius: 0.5rem;
+    background-color: #EEE;
+    box-sizing: border-box;
+    box-shadow: 0 0 0px 1px rgba(0, 0, 0, 0.06);
+    padding: 0.25rem;
+    width: 360px;
+    font-size: 14px;
+}
+  
+.radio-inputs .radio {
+    flex: 1 1 auto;
+    text-align: center;
+}
+  
+.radio-inputs .radio input {
+    display: none;
+}
+  
+.radio-inputs .radio .name {
+    display: flex;
+    cursor: pointer;
+    align-items: center;
+    justify-content: center;
+    border-radius: 0.5rem;
+    border: none;
+    padding: .5rem 0;
+    color: #101101;
+    transition: all .15s ease-in-out;
+}
+  
+.radio-inputs .radio input:checked + .name {
+    background-color: #101101;
+  font-weight: 600;
+  color: #FDFFFF;
+}
+
+.form-media__input{
+    padding: .2rem 0;
+    border-radius: 8px;
+    width: 120px;
+    border: none;
+    border: 1px solid bka;
+    box-shadow: 6px 6px 0px #000;
+}
+
+
+.calculator{
+    width: 80vh;
+    display: flex;
+    align-items: center;   
+    justify-content: space-between;
+    flex-direction: column;
+    margin-top: 20px;
+}
+
+.input__container{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+.item {
+    display: flex;
+    line-height: 28px;
+    align-items: center;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    width: 60%;
+}
+
+.main{
+    display: None;
+    align-items: center;
+}
+  
+.input {
+    width: 100%;
+    width: 160px;
+    height: 35px;
+    line-height: 28px;
+    padding: 0 0.5rem;
+    padding-left: 2.2rem;
+    border: 2px solid transparent;
+    border-radius: 8px;
+    outline: none;
+    background-color: #f3f3f4;
+    color: #000;
+    font-weight: bold;
+    transition: 0.3s ease;
+    font-size: 13px;
+    margin-top: 46px;
+}
+
+.n__input{
+    padding-left: 1.2rem;
+}
+  
+.input::placeholder {
+    color: #9e9ea7;
+}
+  
+.input:focus,
+  input:hover {
+    outline: none;
+    border-color: rgba(234, 226, 183, 0.4);
+    background-color: #fff;
+    box-shadow: 0 0 0 4px rgb(234 226 183 / 10%);
+}
+
+
+  
+.input__submit{
+    padding: 2px 30px;
+    border: 2px solid #2c2c2c;
+    background-color: #1a1a1a;
+    color: #ffffff;
+    font-size: 0.85rem;
+    cursor: pointer;
+    border-radius: 30px;
+    transition: all 0.4s ease;
+    outline: none;
+    position: relative;
+    overflow: hidden;
+    font-weight: bold;
+}
+
+.input__submit:hover, .input__submit:focus{
+    border-color: #666666;
+    background: #292929;
+}
+
+.input__submit::after{
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(
+      circle,
+      rgba(255, 255, 255, 0.25) 0%,
+      rgba(255, 255, 255, 0) 70%
+    );
+    transform: scale(0);
+    transition: transform 0.5s ease;
+}
+
+.input__submit:hover::after {
+    transform: scale(4);
+}
+
+
+
+.valuetoShow{
+    opacity: 0;
+    padding: 30px;
+    width: 30%;
+    height: 50px;
+    background-color: #f3f3f4;
+    border-radius: 12px;
+    font-weight: 500;
+    color: #230026;
+    display: flex;
+}
+
+
+.show{
+    animation: fadeIn 0.5s ease forwards;;
+}
+
+.failed{
+    color: #c54e2e;
+    font-size: 14px;
+    display: none;
+}
+
+.active{
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+}
+
+
+.footer{
+    position: absolute;
+    bottom: 81px;
+    width: 90%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.nombres{
+    display: flex;
+    flex-direction: column;
+}
+
+.label{
+    margin-top: 10px;
+}
+
+
+.link{
+    color: #fff;
+    text-decoration: none;
+}
+
+
+@keyframes fadeIn {
+    from {
+      opacity: 0;
+      transform: translateY(-10px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+}
